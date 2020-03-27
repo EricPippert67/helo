@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getUser} from '../../ducks/store'
 import axios from 'axios';
 
 class Auth extends Component{
@@ -93,4 +95,4 @@ class Auth extends Component{
         )
     }
 }
-export default Auth
+export default connect(null, {getUser})(Auth);
