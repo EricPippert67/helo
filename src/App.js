@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import routes from './routes';
 import Nav from './Components/Nav/Nav'
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App(props) {

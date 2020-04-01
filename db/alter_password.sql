@@ -1,3 +1,3 @@
-alter table users
+alter table userz
 alter password
 type text;

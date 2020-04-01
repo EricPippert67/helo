@@ -1,15 +1,15 @@
 const initialState ={
     username:'',
-    user_id: '',
-    profile_pic: ''
+    peopleId: 0,
+    profile: ''
 }
 
-const GET_USER = 'GET_USER';
+const USER_INFO = 'USER_INFO';
 const LOGOUT_USER = 'LOGOUT_USER';
 
-export function getUser(userObj){
+export function userInfo(userObj){
     return{
-        type: GET_USER,
+        type: USER_INFO,
         payload: userObj
     }
 }
@@ -22,7 +22,7 @@ export function logoutUser(){
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
     switch(type){
-        case GET_USER:
+        case USER_INFO:
             return{...state, user: payload};
         case LOGOUT_USER:
             return{...state, user: payload};

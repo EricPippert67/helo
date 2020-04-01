@@ -10,7 +10,7 @@ class Nav extends Component{
             <div>
                 
 
-            Nav
+        
             <button onClick={this.handleHome}>Home</button>
             <button onClick={this.handleNewPost}>New Post</button>
             <button onClick={this.handleLogout}>Logout</button>
