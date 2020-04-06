@@ -27,6 +27,13 @@ import axios from 'axios';
          })
          .catch(err => console.log(err))
       }
+      handleDelete = () => {
+         axios.delete(`/api/post/${this.props.match.params.postid}`)
+         .then(() => {
+            this.props.history.push('/dashboard')
+         })
+         .catch(err => console.log(err))
+        }
       
        render(){
           console.log(this.props.match)

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect}from 'react-redux';
+import axios from 'axios'
 
 class Form extends Component{
     constructor(props) {
@@ -15,6 +16,15 @@ handleInput=e=>{
         [e.target.name]: e.target.value
     })
 }
+handleAdd = () => {
+    const {titleInput, imageInput, contentInput} = this.state
+    axios.post(`/auth/posted/`, {title: titleInput, image: imageInput, content: contentInput})
+    .then(()=> {
+       this.props.history.push('/dashboard');
+    })
+    .catch(err => console.log(err))
+ }
+
     render() {
         return(
 

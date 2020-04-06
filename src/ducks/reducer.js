@@ -5,7 +5,7 @@ const initialState ={
 }
 
 const USER_INFO = 'USER_INFO';
-const LOGOUT_USER = 'LOGOUT_USER';
+const RESET_USER_INFO = 'RESET_USER_INFO';
 
 export function userInfo(userObj){
     return{
@@ -13,10 +13,10 @@ export function userInfo(userObj){
         payload: userObj
     }
 }
-export function logoutUser(){
+export function resetUserInfo(){
     return{
-        type: LOGOUT_USER,
-        payload: {}
+        type: RESET_USER_INFO,
+        payload: initialState
     }
 }
 export default function reducer(state = initialState, action){
@@ -24,7 +24,7 @@ export default function reducer(state = initialState, action){
     switch(type){
         case USER_INFO:
             return{...state, user: payload};
-        case LOGOUT_USER:
+        case RESET_USER_INFO:
             return{...state, user: payload};
         default:
             return state;

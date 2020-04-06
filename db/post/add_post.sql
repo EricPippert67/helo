@@ -4,8 +4,8 @@ insert into posts(
     content,
     author_id
 )values(
-    {title},
-    {img},
-    {content},
-    {author_id}
+    ${title},
+   ${img},
+   ${content},
+   ${author_id}
 );

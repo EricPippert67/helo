@@ -82,7 +82,28 @@ module.exports ={
   
         db.post.add_post({title, img: image, content, author_id: id})
         res.sendStatus(200);
+     },
+     deletePost: (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params;
+        // console.log(id)
+  
+        db.post.delete_post(+id)
+        res.sendStatus(200);
+     },
+     userInfo: async(req, res) => {
+        const db = req.app.get('db');
+        const {userid} = req.session;
+        // console.log('before db calls for it', userid)
+        let user = await db.auth.user_info(+userid);
+        // console.log(user)
+        delete user[0].password;
+        // console.log(user)
+        
+        res.status(200).send(user[0])
+  
      }
   }
+  
 
 
