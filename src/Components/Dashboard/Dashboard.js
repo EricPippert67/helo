@@ -13,7 +13,7 @@ class Dashboard extends Component{
         }
     }
     componentDidMount =() =>{
-        this.getPosts();
+        this.handleSearch();
     }
     handleToggle = () => {
         this.setState({

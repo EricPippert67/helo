@@ -30,8 +30,9 @@ app.post('/auth/login', ctrl.login)
 app.get('/auth/logout', ctrl.logout)
 
 
-app.get('api/posts/:id', ctrl.getPosts)
-app.get('api/post/:id', ctrl.getSinglePost)
-app.post('api/posted/:id',ctrl.addPost)
+app.get('/api/posts/:id', ctrl.getPosts)
+app.get('/api/post/:id', ctrl.getSinglePost)
+app.post('/api/posted/:id',ctrl.addPost)
+
 
 app.listen(port, () => console.log(`Server running on ${port}`));

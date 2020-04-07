@@ -5,12 +5,12 @@ module.exports ={
         const {password, username} = req.body;
         const db =req.app.get('db');
 
-        let user = await db.auth.check_user(email);
+        let user = await db.auth.check_user(username);
         if (user[0]){
             return res.status(400).send('User already exists, choose another one!')
         }
 
-        let salt = bcrypt.getSaltSync(10);
+        let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(password, salt);
 
         let newUser = await db.auth.register_user({password: hash, username});
@@ -39,6 +39,8 @@ module.exports ={
         res.sendStatus(200);
     },
     getPosts: async(req, res) => {
+       console.log(req.query)
+       console.log(req.params)
         const {userPosts, searchInput} = req.query;
         const {id} = req.params
         const db = req.app.get('db');
